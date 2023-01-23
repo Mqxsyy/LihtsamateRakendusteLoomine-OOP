@@ -1,3 +1,3 @@
 # LihtsamateRakendusteLoomine-OOP
-Gert Mägi__
+Gert Mägi  
 TA-22E
