@@ -1,5 +1,6 @@
-﻿<%@ Page Title="Products" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
-         CodeBehind="ProductList.aspx.cs" Inherits="WingtipToys.ProductList" %>
+﻿<%@ Page Title="Products" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="ProductList.aspx.cs" Inherits="WingtipToys.ProductList" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <section>
         <div>
@@ -7,7 +8,7 @@
                 <h2><%: Page.Title %></h2>
             </hgroup>
 
-            <asp:ListView ID="productList" runat="server" 
+            <asp:ListView ID="productList" runat="server"
                 DataKeyNames="ProductID" GroupItemCount="4"
                 ItemType="WingtipToys.Models.Product" SelectMethod="GetProducts">
                 <EmptyDataTemplate>
@@ -30,27 +31,26 @@
                         <table>
                             <tr>
                                 <td>
-                                    <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>">
-                                        <img src="/Catalog/Images/Thumbs/<%#:Item.ImagePath%>"
-                                            width="100" height="75" style="border: solid" /></a>
+                                    <a href="<%#: GetRouteUrl("ProductByNameRoute", new {productName = Item.ProductName}) %>">
+                                        <image src='/Catalog/Images/Thumbs/<%#:Item.ImagePath%>'
+                                            width="100" height="75" border="1" />
+                                    </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>">
-                                        <span>
-                                            <%#:Item.ProductName%>
-                                        </span>
+                                    <a href="<%#: GetRouteUrl("ProductByNameRoute", new {productName = Item.ProductName}) %>">
+                                        <%#:Item.ProductName%>
                                     </a>
                                     <br />
                                     <span>
                                         <b>Price: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
                                     </span>
                                     <br />
-                                    <a href="/AddToCart.aspx?productID=<%#:Item.ProductID %>">               
+                                    <a href="/AddToCart.aspx?productID=<%#:Item.ProductID %>">
                                         <span class="ProductListItem">
                                             <b>Add To Cart<b>
-                                        </span>           
+                                        </span>
                                     </a>
                                 </td>
                             </tr>
@@ -62,11 +62,11 @@
                     </td>
                 </ItemTemplate>
                 <LayoutTemplate>
-                    <table runat="server" style="width:100%;">
+                    <table runat="server" style="width: 100%;">
                         <tbody>
                             <tr runat="server">
                                 <td runat="server">
-                                    <table id="groupPlaceholderContainer" runat="server" style="width:100%">
+                                    <table id="groupPlaceholderContainer" runat="server" style="width: 100%">
                                         <tr id="groupPlaceholder" runat="server"></tr>
                                     </table>
                                 </td>
