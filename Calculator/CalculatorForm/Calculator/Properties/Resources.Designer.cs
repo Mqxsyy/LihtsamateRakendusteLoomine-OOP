@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CalculatorForm.Properties {
+namespace Calculator.Properties {
     using System;
     
     
