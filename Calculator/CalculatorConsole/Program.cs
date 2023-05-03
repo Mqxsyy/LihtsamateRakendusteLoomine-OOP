@@ -8,12 +8,12 @@ namespace CalculatorConsole
         
         static void Main(string[] args)
         {
-            Calculate("");
-            Calculate("1");
-            Calculate("15-5/2");
-            Calculate("2*3-1/5+8");
-            Calculate("4+2C2+3");
-            Calculate("500-20++2/abc=n");
+            //Calculate("");
+            //Calculate("1");
+            //Calculate("15-5/2");
+            //Calculate("2*3-1/5+8");
+            //Calculate("4+2C2+3");
+            //Calculate("500-20++2/abc=n");
         }
 
         static void Calculate(string expression)
